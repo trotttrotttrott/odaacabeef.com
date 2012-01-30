@@ -213,5 +213,6 @@ DEPENDENCIES
   rspec-rails (~> 2.6)
   ruby-debug19
   sass-rails (~> 3.1.4)
+  sprockets
   turn
   uglifier (>= 1.0.3)
