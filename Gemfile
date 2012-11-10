@@ -2,27 +2,21 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
 
-# database
 gem 'mysql2' # for dev
 gem 'pg' # for heroku
 
-# radical markup
 gem 'haml'
 
-# security
 gem 'devise'
 
-# persistent sorting
-gem 'acts_as_list'
-
-# image manipulation
 gem 'mini_magick'
-
-# image uploading, management
 gem 'carrierwave'
+
+gem 'thin'
 
 # asset pipeline
 group :assets do
+  gem 'sprockets'
   gem 'sass-rails', '~> 3.1.4'
   gem 'uglifier', '>= 1.0.3'
 end
