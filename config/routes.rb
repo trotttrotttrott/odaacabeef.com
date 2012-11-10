@@ -1,4 +1,4 @@
-Trotttrotttrott::Application.routes.draw do
+Odaacabeef::Application.routes.draw do
 
   root :to => 'public/home#index'
 
