@@ -34,7 +34,7 @@ module Odaacabeef
     # config.i18n.default_locale = :de
 
     # Configure the default encoding used in templates for Ruby 1.9.
-    config.encoding = "utf-8"
+    config.encoding = 'utf-8'
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
@@ -44,5 +44,23 @@ module Odaacabeef
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # On config/application.rb forcing your application to not access the DB
+    # or load models when precompiling your assets.
+    config.assets.initialize_on_precompile = false
+
+    def self.compile_asset?(path)
+      # ignores any filename that begins with '_' (e.g. sass partials)
+      # all other css/js/sass/image files are processed
+      if File.basename(path) =~ /^[^_].*\.\w+$/
+        puts "Compiling: #{path}"
+        true
+      else
+        puts "Ignoring: #{path}"
+        false
+      end
+    end
+
+    config.assets.precompile = [ method(:compile_asset?).to_proc ]
   end
 end
