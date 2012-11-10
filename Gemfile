@@ -4,31 +4,21 @@ gem 'rails', '3.1.1'
 
 gem 'mysql2' # for dev
 gem 'pg' # for heroku
-
 gem 'haml'
-
+gem 'jquery-rails'
 gem 'devise'
-
-gem 'mini_magick'
-gem 'carrierwave'
-
 gem 'thin'
+gem 'fog'
 
-# asset pipeline
 group :assets do
   gem 'sprockets'
-  gem 'sass-rails', '~> 3.1.4'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails'
+  gem 'compass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
+  gem 'asset_sync'
 end
 
-# js library of choice
-gem 'jquery-rails'
-
-# asynchronous work
-gem 'resque', :require => 'resque/server'
-gem 'resque-retry'
-
-# dev
 group :development, :test do
   gem 'ruby-debug19'
   gem 'launchy'
@@ -36,7 +26,5 @@ group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'mock-server'
-  # Pretty printed test output
   gem 'turn', :require => false
 end
-
