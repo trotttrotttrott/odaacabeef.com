@@ -3,7 +3,8 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.1'
 
 # database
-gem 'mysql2'
+gem 'mysql2' # for dev
+gem 'pg' # for heroku
 
 # radical markup
 gem 'haml'
