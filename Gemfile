@@ -1,17 +1,18 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.1'
+gem 'rails'
 
-gem 'mysql2' # for dev
-gem 'pg' # for heroku
+gem 'mysql2'
+gem 'pg'
+
 gem 'haml'
+gem 'haml-rails'
 gem 'jquery-rails'
-gem 'devise'
-gem 'thin'
 gem 'fog'
 
+gem 'puma'
+
 group :assets do
-  gem 'sprockets'
   gem 'sass-rails'
   gem 'compass-rails'
   gem 'coffee-rails'
@@ -20,11 +21,7 @@ group :assets do
 end
 
 group :development, :test do
-  gem 'ruby-debug19'
-  gem 'launchy'
-  gem 'rspec-rails', '~> 2.6'
+  gem 'rspec-rails'
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'mock-server'
-  gem 'turn', :require => false
 end
