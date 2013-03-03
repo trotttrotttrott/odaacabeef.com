@@ -1,78 +1,11 @@
 #public_home_index {
 
-  .dudes {
-    background: asset-url('public/home/index/dudes.png', image) no-repeat center;
-    width: 100%;
-    height: 511px;
-    position: fixed;
-    bottom: 0;
-    z-index: 1;
-  }
-
-  .overlay {
-    position: absolute;
-    z-index: 2;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    top: 0;
-
-    div {
-      width: 1280px;
-      margin: 0 auto;
-    }
-
-    .north {
-      background: asset-url('public/home/index/overlay_north.png', image) no-repeat;
-      height: 48px;
-    }
-
-    .north_central {
-      background: asset-url('public/home/index/overlay_north_central.png', image) repeat-y;
-      height: 218px;
-    }
-
-    .south_central {
-      background: asset-url('public/home/index/overlay_south_central.png', image) no-repeat;
-      height: 32px;
-    }
-
-    .south {
-      background: asset-url('public/home/index/overlay_south.png', image) repeat-y;
-      height: 100%;
-    }
-  }
-
-  .odaacabeef {
-    background: asset-url('public/home/index/odaacabeef.png', image) no-repeat;
-    width: 573px;
-    height: 247px;
-    margin: 8px auto 0;
-    position: relative;
-    z-index: 2;
-
-    .is {
-      display: none;
-    }
-  }
-
-  &.out {
-
-    .overlay .north_central {
-      height: 16px;
-    }
-
-    .odaacabeef {
-      background: asset-url('public/home/index/odaacabeef_small.png', image) no-repeat;
-      width: 600px;
-      height: 51px;
-
-      .is {
-        display: block;
-        padding-top: 34px;
-        margin-left: 124px;
-        color: #444;
-      }
-    }
+  & > div:first-child {
+    font-family: 'SubwayTicker';
+    color: #07ff00;
+    font-size: 100px;
+    letter-spacing: 10px;
+    margin: 10px 0;
+    text-align: center;
   }
 }

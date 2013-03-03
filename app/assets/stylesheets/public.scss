@@ -3,6 +3,9 @@
 
 @import 'public/home/index';
 
+@include font-face('SubwayTicker', font-files('/fonts/subway_ticker-webfont.otf', '/fonts/subway_ticker-webfont.ttf', '/fonts/subway_ticker-webfont.woff', '/fonts/subway_ticker-webfont.svg'), '/fonts/subway_ticker-webfont.eot');
+@include font-face('Vera', font-files('/fonts/vera-webfont.otf', '/fonts/vera-webfont.ttf', '/fonts/vera-webfont.woff', '/fonts/vera-webfont.svg'), '/fonts/vera-webfont.eot');
+
 html {
 
   body {
