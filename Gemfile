@@ -7,7 +7,10 @@ gem 'pg'
 
 gem 'haml'
 gem 'haml-rails'
+
 gem 'jquery-rails'
+gem 'backbone-rails'
+
 gem 'fog'
 
 gem 'puma'
