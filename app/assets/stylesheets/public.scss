@@ -1,15 +1,35 @@
 @import 'compass';
 @import 'compass/reset';
+@import 'compass/css3/images';
+
+$_07ff00: #07ff00; // green
+$_ff00cf: #ff00cf; // pink
+$_ffff00: #ffff00; // yellow
+
+$_fff: #fff; // white
+$_ccc: #ccc;
+$_333: #333;
+$_000: #000; // black
+
+@import 'jquery-ui';
 
 @import 'public/home/index';
+@import 'public/opscode/index';
 
-@include font-face('SubwayTicker', font-files('/fonts/subway_ticker-webfont.otf', '/fonts/subway_ticker-webfont.ttf', '/fonts/subway_ticker-webfont.woff', '/fonts/subway_ticker-webfont.svg'), '/fonts/subway_ticker-webfont.eot');
-@include font-face('Vera', font-files('/fonts/vera-webfont.otf', '/fonts/vera-webfont.ttf', '/fonts/vera-webfont.woff', '/fonts/vera-webfont.svg'), '/fonts/vera-webfont.eot');
+@include font-face('SubwayTicker', font-files('/fonts/subway_ticker-webfont.ttf', '/fonts/subway_ticker-webfont.woff', '/fonts/subway_ticker-webfont.svg'), '/fonts/subway_ticker-webfont.eot');
+@include font-face('Vera', font-files('/fonts/vera-webfont.ttf', '/fonts/vera-webfont.woff', '/fonts/vera-webfont.svg'), '/fonts/vera-webfont.eot');
 
 html {
+  background: $_000;
+  font-family: 'Vera', monospace;
+  color: $_07ff00;
+}
 
-  body {
-    background: #000;
-    font-family: monospace;
+a {
+  text-decoration: none;
+  color: $_ff00cf;
+
+  &:hover {
+    color: $_ffff00;
   }
 }

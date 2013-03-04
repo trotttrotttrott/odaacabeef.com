@@ -1,0 +1,16 @@
+%section#opscode_index
+
+  #node_monitor
+
+    .tool_bar
+
+      %h1 Node Monitor
+
+      = link_to 'run `chef-client`', opscode_run_command_path, :remote => true
+
+    #view_port
+
+      #stdout
+
+:coffee
+  Odb.View.start 'Public::Opscode::Index::NodeMonitor', el: $('#node_monitor')

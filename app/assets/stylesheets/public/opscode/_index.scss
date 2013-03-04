@@ -1,0 +1,31 @@
+#opscode_index {
+
+  #node_monitor {
+    max-width: 960px;
+    margin: 0 auto;
+
+    .tool_bar {
+      margin: 25px 0 10px;
+      position: relative;
+
+      h1 {
+        font-family: 'SubwayTicker';
+        font-size: 100px;
+      }
+
+      a {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+    }
+
+    #view_port {
+      border: 1px solid $_fff;
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 25px;
+    }
+  }
+}

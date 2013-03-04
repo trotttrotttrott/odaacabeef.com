@@ -1,4 +1,4 @@
-require 'client_side_event'
+require 'modules/client_side_event'
 
 class PublicController < ApplicationController
 

@@ -4,35 +4,30 @@
 
   views = {}
 
-  (->
+  Odb.View.register = (id, creator)->
+    logger.debug "Odb.View.register: #{id}"
+    views[id] =
+      creator: Backbone.View.extend creator()
+      instance: null
 
-    Odb.View.register = (id, creator)->
-      logger.debug "Odb.View.register: #{id}"
-      views[id] =
-        creator: Backbone.View.extend creator
-        instance: null
-
-    Odb.View.start = (id, params)->
-      logger.debug "Odb.View.start: #{id}..."
-      if !views[id]
-        return logger.warn "Odb.View.start: #{id} is not registered."
-      if views[id].instance
-        return logger.warn "Odb.View.start: #{id} has already been started."
-      views[id].instance = new views[id].creator params
-      logger.debug "Odb.View.start: ...#{id} was started."
-
-    return
-  )()
+  Odb.View.start = (id, params)->
+    logger.debug "Odb.View.start: #{id}..."
+    if !views[id]
+      return logger.warn "Odb.View.start: #{id} is not registered."
+    if views[id].instance
+      return logger.warn "Odb.View.start: #{id} has already been started."
+    views[id].instance = new views[id].creator params
+    logger.debug "Odb.View.start: ...#{id} was started."
 
   # Events
 
-  Odb.Events.bind = (ev, callback, context) ->
-    logger.info "Odb.Events.bind: #{ev};"
-    Backbone.Events.bind(ev, callback, context)
+  Odb.Events.on = (ev, callback, context) ->
+    logger.info "Odb.Events.on: #{ev};"
+    Backbone.Events.on(ev, callback, context)
 
-  Odb.Events.unbind = (ev, callback, context) ->
-    logger.info "Odb.Events.unbind: #{ev};"
-    Backbone.Events.unbind ev, callback, context
+  Odb.Events.off = (ev, callback, context) ->
+    logger.info "Odb.Events.off: #{ev};"
+    Backbone.Events.off ev, callback, context
 
   Odb.Events.trigger = (notification, data) ->
     logger.info "Odb.Events.trigger: #{notification}; typeof data == #{typeof data};"
@@ -50,8 +45,10 @@
         catch error
           return {}
       )()
-      data.ajax_options = options if data && typeof data == 'object' && !data.ajax_options # pass ajax options along
-      Odb.Events.trigger 'client_side_event:call', data
+      if data.events
+        $(data.events).each (i, event)->
+          event.data.ajax_options = data.ajax_options if event.data && typeof event.data == 'object' && !event.data.ajax_options # pass along ajax options
+          Odb.Events.trigger event.name, event.data
 
   # a nifty logger
   logger = ((methods)->
