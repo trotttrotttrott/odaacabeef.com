@@ -4,7 +4,7 @@
     max-width: 960px;
     margin: 0 auto;
 
-    .tool_bar {
+    .head_tool_bar {
       margin: 25px 0 10px;
       position: relative;
 
@@ -22,10 +22,34 @@
 
     #view_port {
       border: 1px solid $_fff;
-      height: 200px;
-      overflow: hidden;
+      height: 300px;
+      overflow-x: hidden;
       position: relative;
-      margin-bottom: 25px;
+      padding: 5px;
+
+      #stdout {
+        font-size: 12px;
+        line-height: 25px;
+
+        p {
+
+          &.kill {
+            color: $_666;
+          }
+        }
+      }
+    }
+
+    .foot_tool_bar {
+      text-align: right;
+      padding: 10px;
+      border-bottom: 1px solid $_fff;
+
+      #status {
+        font-size: 14px;
+        color: $_666;
+        float: left;
+      }
     }
   }
 }

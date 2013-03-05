@@ -6,8 +6,8 @@ Odaacabeef::Application.routes.draw do
 
     namespace :opscode do
       get '/', :action => 'index'
-      get :run_command
-      get :tail_command
+      get :run
+      get :tail
     end
   end
 end

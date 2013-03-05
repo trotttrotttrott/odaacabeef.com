@@ -24,6 +24,7 @@ group :assets do
 end
 
 group :development, :test do
+  gem 'debugger', :git => 'https://github.com/windwiny/debugger.git'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'database_cleaner'

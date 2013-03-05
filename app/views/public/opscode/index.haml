@@ -2,15 +2,26 @@
 
   #node_monitor
 
-    .tool_bar
+    .head_tool_bar
 
       %h1 Node Monitor
 
-      = link_to 'run `chef-client`', opscode_run_command_path, :remote => true
+      = link_to 'run `tail -f chef-client`', opscode_run_path, :remote => true
 
     #view_port
 
       #stdout
 
+    .foot_tool_bar
+
+      #status
+
+      #actions
+
+        = link_to '^C', '', 'data-stop' => true, :id => 'kill'
+
 :coffee
-  Odb.View.start 'Public::Opscode::Index::NodeMonitor', el: $('#node_monitor')
+  Odb.View.start 'Public::Opscode::Index::NodeMonitor',
+    el: $('#node_monitor')
+    tail_path: '#{opscode_tail_path}'
+    default_status: '...'

@@ -5,12 +5,14 @@ class Public::OpscodeController < PublicController
   def index
   end
 
-  def run_command
-    render :json => client_side_event(['public:opscode:run_command', SecureRandom.hex(16)])
+  def run
+    render :json => client_side_event(['public:opscode:run', { :status => 'tail...' }])
   end
 
-  def tail_command
-    render :json => client_side_event(['public:opscode:tail_command', SecureRandom.hex(16)])
+  def tail
+    api = Api::NodeTail.new
+    res = api.tail('log/crap')
+    render :json => client_side_event(['public:opscode:tail', { :status => 'tailing...', :tail => view_context.simple_format(res['tail']) }])
   end
 
   private

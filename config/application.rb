@@ -10,6 +10,14 @@ if defined?(Bundler)
 end
 
 module Odaacabeef
+
+  def self.config
+    @config ||= begin
+      config = YAML.load_file(Rails.root.join('config/settings.yml'))
+      config.fetch(Rails.env.to_s, {}).with_indifferent_access
+    end
+  end
+
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -64,3 +72,8 @@ module Odaacabeef
     config.assets.precompile = [ method(:compile_asset?).to_proc ]
   end
 end
+
+module Api
+end
+
+require 'api/node_tail'

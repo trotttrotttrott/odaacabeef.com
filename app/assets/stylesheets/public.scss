@@ -1,6 +1,5 @@
 @import 'compass';
 @import 'compass/reset';
-@import 'compass/css3/images';
 
 $_07ff00: #07ff00; // green
 $_ff00cf: #ff00cf; // pink
@@ -8,10 +7,9 @@ $_ffff00: #ffff00; // yellow
 
 $_fff: #fff; // white
 $_ccc: #ccc;
+$_666: #666;
 $_333: #333;
 $_000: #000; // black
-
-@import 'jquery-ui';
 
 @import 'public/home/index';
 @import 'public/opscode/index';

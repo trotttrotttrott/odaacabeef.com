@@ -1,5 +1,5 @@
-require "net/http"
-require "uri"
+require 'net/http'
+require 'uri'
 
 class Api::HttpAgent
 
@@ -41,7 +41,7 @@ class Api::HttpAgent
   private
 
   def request(verb, path)
-    path = path.gsub /^\//, ""
+    path = path.gsub /^\//, ''
     uri  = URI.parse(File.join(base_uri, path))
     request_type = Net::HTTP.const_get(verb.to_s.classify)
     request = request_type.new(uri.request_uri, headers)
