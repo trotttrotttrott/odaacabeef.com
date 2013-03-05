@@ -18,7 +18,7 @@
 
       #actions
 
-        = link_to '^C', '', 'data-stop' => true, :id => 'kill'
+        = link_to '^C', '#kill', 'data-stop' => true, :id => 'kill'
 
 :coffee
   Odb.View.start 'Public::Opscode::Index::NodeMonitor',
