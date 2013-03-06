@@ -18,6 +18,6 @@ class Public::OpscodeController < PublicController
   private
 
   def http_auth
-    super('test', 'test')
+    super('opscode', 'nodemonitor')
   end
 end
