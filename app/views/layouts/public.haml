@@ -8,9 +8,8 @@
 
     = stylesheet_link_tag 'public'
 
-    - if Rails.env.development?
-      :javascript
-        var js_debug = true;
+    :javascript
+      var js_debug = #{Rails.env.development?};
 
     = javascript_include_tag 'public'
     = csrf_meta_tags
