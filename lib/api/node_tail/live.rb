@@ -10,10 +10,10 @@ class Api::NodeTail::Live
   end
 
   def run(command)
-    @http.get "/run?command=#{command}"
+    @http.get "/run?command=#{URI::encode(command)}"
   end
 
-  def tail(file)
-    @http.get "/tail?file=#{file}"
+  def tail(file, from)
+    @http.get "/tail?file=#{file}&from=#{from}"
   end
 end

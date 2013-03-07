@@ -6,7 +6,9 @@
 
       %h1 Node Monitor
 
-      = link_to 'run `tail -f chef-client`', opscode_run_path, :remote => true
+      = link_to 'run `sudo chef-client`', opscode_run_path, :remote => true, :title => 'sudo chef-client'
+
+      %span run `sudo chef-client`
 
     #view_port
 
@@ -18,7 +20,20 @@
 
       #actions
 
-        = link_to '^C', '#kill', 'data-stop' => true, :id => 'kill'
+        = link_to '^C', '#abort', 'data-stop' => true, :id => 'abort', :title => 'abort'
+
+        %span :
+
+        = link_to 'clear', '#clear', 'data-stop' => true, :id => 'clear', :title => 'clear'
+
+  %footer
+
+    = link_to 'About', opscode_about_node_monitor_path
+
+    %span :
+
+    = link_to 'Gist', opscode_gist_path
+
 
 :coffee
   Odb.View.start 'Public::Opscode::Index::NodeMonitor',

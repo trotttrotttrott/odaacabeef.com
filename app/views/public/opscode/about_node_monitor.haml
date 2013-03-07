@@ -1,0 +1,34 @@
+%section#opscode_about_node_monitor
+
+  #node_monitor
+
+    .head_tool_bar
+
+      %h1 Node Monitor
+
+  .about
+
+    %p
+      = link_to 'Node Monitor', opscode_path
+      %span is a web tool living in a Rails app at Heroku that can run and tail the chef-client on a node at Rackspace. It's able to do this through a web service the chef client provisions on the node.
+
+    %p
+      = link_to 'Node Tail', 'https://github.com/trotttrotttrott/node-tail', :target => '_blank'
+      %span is the web service. It's a Sinatra app running on the node targeted by this instance of Node Monitor. It exposes enpoints to send system commands and read their output.
+
+    %p
+      %span Hosted Chef is providing the node's Chef Server. All assets are in my
+      = link_to ' chef repo on Github', 'https://github.com/trotttrotttrott/chef-repo', :target => '_blank'
+      %span> .
+
+    %p
+      %span (
+      = link_to 'https://github.com/trotttrotttrott/node-tail'
+      %span :
+      = link_to 'https://github.com/trotttrotttrott/chef-repo'
+      %span )
+
+    %p
+      = link_to '<<<<< back', opscode_path, :class => 'back'
+      %span :
+      = link_to 'Gist', opscode_gist_path, :class => 'gist'

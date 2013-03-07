@@ -1,18 +1,21 @@
 Odb.View.register 'Public::Opscode::Index::NodeMonitor', ->
 
-  _poll = (path)->
-    $.ajax path
+  _poll_interval = 100
+
+  _poll = (path, from)->
+    $.ajax path,
+      data:
+        from: from
 
   _set_status = (status)->
     $('#status').html status
 
-  _kill = false
+  _abort = false
+
+  _running = false
 
   _stdout = (str)->
     $('#stdout').append str
-    # console.log $('#view_port').scrollTop()
-    # console.log $('#stdout').height()
-    # if $('#view_port').scrollTop() == $('#stdout').height()
     $('#view_port').scrollTop($('#stdout').height())
 
   initialize: ->
@@ -21,21 +24,30 @@ Odb.View.register 'Public::Opscode::Index::NodeMonitor', ->
     _set_status @options.default_status
 
   events:
-    'click #kill': 'kill'
+    'click #abort': 'abort'
+    'click #clear': 'clear'
 
   run: (data)->
+    return if _running
+    @$el.addClass('running')
     _set_status data.status
+    _running = true
     _poll @options.tail_path
 
   tail: (data)->
-    if !!_kill
-      _kill = false
+    if !!_abort || !data.running
+      @$el.removeClass('running')
+      _set_status @options.default_status
+      _running = false
+      _abort = false
     else
       _set_status data.status
       _stdout data.tail
-      setTimeout(_poll, 1000, @options.tail_path)
+      setTimeout(_poll, _poll_interval, @options.tail_path, data.to)
 
-  kill: (e)->
-    _set_status @options.default_status
-    _stdout '<p class="kill">^C</p>'
-    _kill = true
+  abort: (e)->
+    _stdout '<p class="abort">^C</p>'
+    _abort = true
+
+  clear: (e)->
+    $('#stdout').html ''

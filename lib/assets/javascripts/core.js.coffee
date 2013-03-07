@@ -37,7 +37,7 @@
 
   $(document).bind 'ajaxComplete', (e, xhr, options)->
     if /^5|^0/.test(xhr.status)
-      Odb.Events.trigger 'error', Odb.String.get('ajax_error_messages')["error_code_#{xhr.status}"]
+      Odb.Events.trigger 'error', status: xhr.status
     else
       data = (->
         try

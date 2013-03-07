@@ -6,7 +6,7 @@ class Api::JsonUnwrapperDelegator
 
     def initialize(response)
       @response = response
-      super(response.fetch('error'))
+      super(response.fetch('message'))
     end
   end
 
@@ -36,7 +36,7 @@ class Api::JsonUnwrapperDelegator
   # If that fails, raises an +InvalidResponse+.
   def unwrap(json)
     JSON.parse(json).tap do |response|
-      raise(InvalidResponse, response) unless response.fetch("success")
+      raise(InvalidResponse, response) unless response.fetch('success')
     end
   rescue => exception
     @logger.error '== Error processing a response from the backend server =='

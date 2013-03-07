@@ -6,6 +6,8 @@ Odaacabeef::Application.routes.draw do
 
     namespace :opscode do
       get '/', :action => 'index'
+      get :about_node_monitor
+      get :gist
       get :run
       get :tail
     end
