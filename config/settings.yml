@@ -1,0 +1,15 @@
+development: &defaults
+  node_tail:
+    host: 0.0.0.0
+    port: 8080
+  opscode:
+    tail_path: log/crap
+    run_command: 'ruby ./lib/mock/crap_shoot.rb'
+
+production:
+  node_tail:
+    host: radbox01.odaacabeef.com
+    port: 80
+  opscode:
+    tail_path: /var/log/chef/client.log
+    run_command: 'sudo chef-client'
