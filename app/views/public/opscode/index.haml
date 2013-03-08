@@ -6,15 +6,17 @@
 
       %h1 Node Monitor
 
-      = link_to 'run `sudo chef-client`', opscode_run_path, :remote => true, :title => 'sudo chef-client'
+      = link_to 'run chef-client', opscode_run_path, :remote => true, :title => 'sudo chef-client'
 
-      %span run `sudo chef-client`
+      %span run chef-client
 
     #view_port
 
       #stdout
 
     .foot_tool_bar
+
+      #loader= image_tag 'public/opscode/index/blinker.gif'
 
       #status
 
@@ -36,7 +38,10 @@
 
 
 :coffee
-  Odb.View.start 'Public::Opscode::Index::NodeMonitor',
-    el: $('#node_monitor')
-    tail_path: '#{opscode_tail_path}'
-    default_status: '...'
+  $ ->
+    Odb.View.start 'Public::Opscode::Index::Loader', el: document
+    Odb.View.start 'Public::Opscode::Index::NodeMonitor',
+      el: $('#node_monitor')
+      tail_path: '#{opscode_tail_path}'
+      default_status: '...'
+      completed_message: '#{@chef}'

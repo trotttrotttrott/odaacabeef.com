@@ -25,9 +25,13 @@
       h1 {
         font-family: 'SubwayTicker';
         font-size: 100px;
+        display: inline;
       }
 
       a, span {
+        @include border-radius(2px);
+        border: 1px solid;
+        padding: 5px 10px;
         position: absolute;
         right: 0;
         bottom: 0;
@@ -41,7 +45,7 @@
 
     #view_port {
       border: 1px solid $_fff;
-      height: 300px;
+      height: 400px;
       overflow-x: hidden;
       position: relative;
       padding: 5px;
@@ -53,8 +57,20 @@
 
         p {
 
-          &.abort, &.finished {
+          &.abort, &.chef {
             color: $_666;
+          }
+
+          &.chef {
+            font-family: Monospace;
+            line-height: 16px;
+          }
+        }
+
+        div.chef {
+
+          div {
+            line-height: 10px;
           }
         }
       }
@@ -64,6 +80,15 @@
       text-align: right;
       padding: 10px 10px 10px 0;
       border-bottom: 1px solid $_fff;
+
+      #loader {
+        float: left;
+        margin-right: 15px;
+
+        img {
+          display: none;
+        }
+      }
 
       #status {
         font-size: 12px;

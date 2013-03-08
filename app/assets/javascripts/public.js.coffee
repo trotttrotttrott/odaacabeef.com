@@ -1,5 +1,6 @@
 #= require jquery
 #= require jquery_ujs
+#= require jquery.transit.min
 #= require json2
 #= require underscore
 #= require backbone

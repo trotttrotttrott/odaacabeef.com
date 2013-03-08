@@ -4,6 +4,7 @@ class Public::OpscodeController < PublicController
   before_filter :redirect_unless_xhr, :only => [:run, :tail]
 
   def index
+    @chef = view_context.simple_format(CGI::escapeHTML(render_to_string(:partial => 'chef')).gsub(' ', '&nbsp;'), :class => 'chef')
   end
 
   def about_node_monitor
@@ -23,7 +24,7 @@ class Public::OpscodeController < PublicController
     res = api.tail(Odaacabeef.config[:opscode][:tail_path], params[:from])
     render :json => client_side_event(['public:opscode:tail',
                                       { :status => "running chef-client - pid #{res['pid']}",
-                                        :tail => view_context.simple_format(res['tail']),
+                                        :tail => view_context.simple_format(CGI::escapeHTML(res['tail'])),
                                         :from => res['from'], :to => res['to'],
                                         :running => res['running'] }])
   end
