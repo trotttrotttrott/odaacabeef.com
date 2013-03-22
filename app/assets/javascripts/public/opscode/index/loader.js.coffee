@@ -5,7 +5,6 @@ Odb.View.register 'Public::Opscode::Index::Loader', ->
     'ajaxComplete': 'complete'
 
   send: (e, xhr, options)->
-    console.log 'fart'
     $('#loader img').show()
 
   complete: (e, xhr, options)->
