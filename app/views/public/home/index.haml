@@ -1,3 +1,23 @@
 %section#public_home_index
 
-  %div odaacabeef
+  %section#north
+
+    %div
+
+      %div odaacabeef.com
+
+      %div= image_tag 'public/home/trotttrotttrott.png'
+
+  %section#central
+
+  %section#south
+
+    %div
+
+      %ul
+        - ['http://github.com/trotttrotttrott', 'http://twitter.com/trotttrotttrott'].each do |href|
+          %li= link_to href, href, :target => '_blank'
+
+  :coffee
+    $ ->
+      Odb.View.start 'Public::Home::Index::Canvas', el: $('#central')

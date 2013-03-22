@@ -4,6 +4,7 @@
 #= require json2
 #= require underscore
 #= require backbone
+#= require kinetic-v4.3.3.min
 #
 #= require core
 #
