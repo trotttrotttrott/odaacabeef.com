@@ -10,14 +10,14 @@
 
   %section#central
 
-  %section#south
+    %section#holes
 
-    %div
+    %section#stripes
+      - (1..12).each do |i|
+        %div{ :style => "height: #{i * 2 + 1}px; margin-bottom: #{i * 2 + 1}px" }
 
-      %ul
-        - ['http://github.com/trotttrotttrott', 'http://twitter.com/trotttrotttrott'].each do |href|
-          %li= link_to href, href, :target => '_blank'
+    %section#links
 
   :coffee
     $ ->
-      Odb.View.start 'Public::Home::Index::Canvas', el: $('#central')
+      Odb.View.start 'Public::Home::Index::Holes', el: $('#holes')

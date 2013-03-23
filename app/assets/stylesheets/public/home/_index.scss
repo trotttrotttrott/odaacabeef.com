@@ -31,31 +31,40 @@
   }
 
   #central {
-    min-height: 200px;
-    background: $_ff00cf;
+    overflow: hidden;
 
-    & > div:first-child {
-      margin: 0 auto;
-      display: block !important;
-      cursor: move;
+    #holes {
+      min-height: 200px;
+
+      & > div:first-child {
+        margin: 0 auto;
+        display: block !important;
+      }
     }
-  }
 
-  #south {
-    border-top: 1px solid $_07ff00;
+    #links {
+      border-top: 1px solid $_07ff00;
 
-    & > div {
-      margin: 0 auto;
-      max-width: 1280px;
-      min-width: 860px;
+      & > div {
+        margin: 0 auto;
+        max-width: 1280px;
+        min-width: 860px;
 
-      ul {
-        margin: 10px 0;
+        ul {
+          margin: 10px 0;
 
-        li {
-          display: inline;
-          margin: 0 10px;
+          li {
+            display: inline;
+            margin: 0 10px;
+          }
         }
+      }
+    }
+
+    #stripes {
+
+      div {
+        background: $_07ff00;
       }
     }
   }
