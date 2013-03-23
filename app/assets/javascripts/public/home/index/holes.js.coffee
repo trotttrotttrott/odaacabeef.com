@@ -2,16 +2,17 @@ Odb.View.register 'Public::Home::Index::Holes', ->
 
   _random = ((n)-> Math.floor(Math.random() * n))
 
-  _random_gradient = (is_okay=false)->
-    while is_okay == false
-      color = "##{Math.floor(Math.random()*16777215).toString(16)}"
-      is_okay = /^#[0-9A-F]{6}$/i.test(color)
-    [0, '#000000', 0.5, color, 0, '#ff00cf']
+  _random_gradient = (okay=false)->
+    color = (-> "##{Math.floor(Math.random()*16777215).toString(16)}" )
+    is_okay = ((color)-> /^#[0-9A-F]{6}$/i.test(color) )
+    while !okay
+      colors = [color(), color()]
+      okay = is_okay(colors[0]) && is_okay(colors[1])
+    [0, '#000000', 0.5, colors[0], 0, colors[1]]
 
   _ease_names = ['linear', 'ease-in', 'ease-out', 'ease-in-out', 'back-ease-in', 'back-ease-out', 'back-ease-in-out', 'elastic-ease-in', 'elastic-ease-out', 'elastic-ease-in-out', 'bounce-ease-out', 'bounce-ease-in', 'bounce-ease-in-out', 'strong-ease-in', 'strong-ease-out', 'strong-ease-in-out']
 
   circles: []
-  animations: []
 
   stage_width: 1280
   stage_height: 200
@@ -28,7 +29,7 @@ Odb.View.register 'Public::Home::Index::Holes', ->
     @schedule_circles()
 
   create_circle: ->
-    [x, y, r] = [_random(@$el.width()), _random(@stage_height), _random(100)]
+    [x, y, r] = [_random(@$el.width()), _random(@stage_height), _random(30)]
     circle = @circle(x, y, r)
     @circle_events(circle)
     @layer.add(circle)
@@ -42,6 +43,7 @@ Odb.View.register 'Public::Home::Index::Holes', ->
       y: y
       radius: r
       draggable: true
+      opacity: .5
       fillRadialGradientStartPoint: 0
       fillRadialGradientStartRadius: 0
       fillRadialGradientEndPoint: 0
@@ -59,7 +61,7 @@ Odb.View.register 'Public::Home::Index::Holes', ->
         layer.draw()
 
   animate: (circle)->
-    period = _random(10000) + 2000
+    period = _random(10000) + 3000
     @animation = new Kinetic.Animation ((frame)->
       scale = Math.sin(frame.time * 2 * Math.PI / period) + 0.001
       circle.setScale(scale)
@@ -69,7 +71,7 @@ Odb.View.register 'Public::Home::Index::Holes', ->
   schedule_circles: ->
     t = this
     @interval = setInterval (->
-      if t.circles.length < 20
+      if t.circles.length < 30
         circle = t.create_circle()
         t.animate(circle)
       circle ||= t.circles[_random(t.circles.length)]
@@ -79,7 +81,7 @@ Odb.View.register 'Public::Home::Index::Holes', ->
       circle.transitionTo
         x: _random(t.$el.width())
         y: _random(t.stage_height)
-        duration: 1
+        duration: _random(10)
         easing: _ease_names[_random(_ease_names.length)]
         scale:
           x: scale_to
