@@ -6,13 +6,13 @@
     %meta{:name => "description", :content => @description}
     %meta{:name => "keywords", :content => @metatags}
 
-    = stylesheet_link_tag 'public'
+    = stylesheet_link_tag params[:controller]
 
-    :javascript
-      var js_debug = #{Rails.env.development?};
+    :coffee
+      js_debug = #{Rails.env.development?}
 
-    = javascript_include_tag 'public'
+    = javascript_include_tag params[:controller]
+
     = csrf_meta_tags
 
-  %body
-    = yield
+  %body= yield

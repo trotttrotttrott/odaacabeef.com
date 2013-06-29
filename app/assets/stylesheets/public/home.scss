@@ -12,9 +12,6 @@ $_333: #333;
 $_111: #111;
 $_000: #000; // black
 
-@import 'public/home/index';
-@import 'public/opscode';
-
 @include font-face('SubwayTicker', font-files('/fonts/subway_ticker-webfont.ttf', '/fonts/subway_ticker-webfont.woff', '/fonts/subway_ticker-webfont.svg'), '/fonts/subway_ticker-webfont.eot');
 @include font-face('Vera', font-files('/fonts/vera-webfont.ttf', '/fonts/vera-webfont.woff', '/fonts/vera-webfont.svg'), '/fonts/vera-webfont.eot');
 @include font-face('Respective', font-files('/fonts/respective-webfont.ttf', '/fonts/respective-webfont.woff', '/fonts/respective-webfont.svg'), '/fonts/respective-webfont.eot');
@@ -34,3 +31,5 @@ a {
     color: $_ffff00;
   }
 }
+
+@import 'public/home/index';
