@@ -9,19 +9,3 @@
       %div= image_tag 'public/home/trotttrotttrott.png'
 
   %section#central
-
-    %section#holes
-
-    %section#links
-      %div
-        %ul
-          %li THE INTERNET
-
-    %section#stripes
-      - (1..12).each do |i|
-        %div{ :style => "height: #{i * 2 + 1}px; margin-bottom: #{i * 2 + 1}px" }
-
-
-  :coffee
-    $ ->
-      Odb.View.start 'Public::Home::Index::Holes', el: $('#holes')
