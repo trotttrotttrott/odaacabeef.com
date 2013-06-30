@@ -1,5 +1,4 @@
 @import 'compass';
-@import 'compass/reset';
 
 $_07ff00: #07ff00; // green
 $_ff00cf: #ff00cf; // pink
@@ -17,19 +16,6 @@ $_000: #000; // black
 @include font-face('Respective', font-files('/fonts/respective-webfont.ttf', '/fonts/respective-webfont.woff', '/fonts/respective-webfont.svg'), '/fonts/respective-webfont.eot');
 @include font-face('AdmirationPains', font-files('/fonts/admiration_pains-webfont.ttf', '/fonts/admiration_pains-webfont.woff', '/fonts/admiration_pains-webfont.svg'), '/fonts/admiration_pains-webfont.eot');
 
-html {
-  background: $_000;
-  font-family: 'Vera', monospace;
-  color: $_07ff00;
-}
-
-a {
-  text-decoration: none;
-  color: $_ff00cf;
-
-  &:hover {
-    color: $_ffff00;
-  }
-}
-
-@import 'public/home/index';
+@import
+  'public/home/foundation_and_overrides',
+  'public/home/index';

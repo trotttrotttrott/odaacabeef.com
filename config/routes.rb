@@ -11,5 +11,9 @@ Odaacabeef::Application.routes.draw do
       get :run
       get :tail
     end
+
+    namespace :trotttrotttrott do
+      get 'public-key', :action => 'public_key'
+    end
   end
 end

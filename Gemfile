@@ -12,10 +12,6 @@ gem 'jquery-rails'
 
 gem 'backbone-rails'
 
-gem 'ember-rails'
-gem 'ember-source', '1.0.0.rc6'
-gem 'handlebars-source', '1.0.0.rc4'
-
 gem 'fog'
 
 gem 'foreman'
@@ -28,6 +24,10 @@ group :assets do
   gem 'coffee-rails'
   gem 'uglifier'
   gem 'asset_sync'
+  gem 'ember-rails'
+  gem 'ember-source', '1.0.0.rc6'
+  gem 'handlebars-source', '1.0.0.rc4'
+  gem 'zurb-foundation'
 end
 
 group :development, :test do

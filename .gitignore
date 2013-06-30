@@ -7,3 +7,5 @@ tmp/
 config/database.yml
 
 .rbenv-gemsets
+
+site_logos-*.png

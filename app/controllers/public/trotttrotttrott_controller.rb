@@ -1,0 +1,6 @@
+class Public::TrotttrotttrottController < PublicController
+
+  def public_key
+    render :text => "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA6mPnTOKTTgQwuvxPfLsgIjYKXjYb6fcJvzeR1gI+795CLL/L4NpRrlHgpRpY2dFGSDIS59yhf/qIDB5/waqWawEI4t50TtJX1Z0mpdRZ/lYK0vYNOsteOH8tuP4nDvPd8bjh2s5MEHiKwVfV5bt2wi0Yx6Vo5oq/yJFoQiODsZKl3l0TVetl/l2AvP8ibO5n4h85CzS3KmXe0zKN8fTRqrvGIldFM8rHIoQuZsLI94Xoadu3EpUQF4Fsltu5PQPqmadcUFf1/a8UayPqi6jHkCp3YCwv3vYC5iczyN59ypRjyoKuSQwjjVZCzK+SbHFV1IlFSN+r9HQYeqr8oNndPQ== trott@odaacabeef.com"
+  end
+end

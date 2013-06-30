@@ -2,10 +2,30 @@
 
   %section#north
 
-    %div
-
-      %div odaacabeef.com
-
-      %div= image_tag 'public/home/trotttrotttrott.png'
+    %div odaacabeef.com
 
   %section#central
+
+    #site_logos
+
+      = link_to '', 'http://github.com/trotttrotttrott', :class => 'site_logos-github', :target => '_blank', :title => 'trotttrotttrott on Github'
+      = link_to '', 'http://trotttrotttrott.com', :class => 'site_logos-octopress', :target => '_blank', :title => 'trotttrotttrott\'s Octopress blog'
+      = link_to '', 'http://twitter.com/trotttrotttrott', :class => 'site_logos-twitter', :target => '_blank', :title => 'trotttrotttrott on Twitter'
+      = link_to '', 'http://www.linkedin.com/in/trotttrotttrott', :class => 'site_logos-linkedin', :target => '_blank', :title => 'trotttrotttrott on LinkedIn'
+
+    #stuff
+
+      %div
+        %span public key
+        %span curl "http://odaacabeef.com/trotttrotttrott/public-key"
+
+  %section#south
+
+    - 5.times do
+      - ['one', 'two', 'three', 'four', 'five'].shuffle.each do |classname|
+        .fluff{ :class => classname }
+
+    .trotttrotttrott= image_tag 'public/home/trotttrotttrott.png'
+
+    - ['one', 'two', 'three', 'four', 'five'].shuffle.each do |classname|
+      .fluff{ :class => classname }

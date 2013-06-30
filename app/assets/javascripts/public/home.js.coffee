@@ -2,14 +2,13 @@
 #= require handlebars
 #= require ember
 #= require ember-data
+#= require vendor/custom.modernizr
+#= require foundation
 #= require_self
 #= require ./home/store
-#= require_tree ./home/models
-#= require_tree ./home/controllers
-#= require_tree ./home/views
-#= require_tree ./home/helpers
-#= require_tree ./home/templates
-#= require_tree ./home/routes
 #= require ./home/router
 
-top.Odb = Ember.Application.create LOG_TRANSITIONS: true
+top.Odb = Ember.Application.create LOG_TRANSITIONS: js_debug
+
+$ ->
+  $(document).foundation()

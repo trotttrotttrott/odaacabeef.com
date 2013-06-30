@@ -1,45 +1,91 @@
 #public_home_index {
+  background: asset-url('public/home/horizontal_stripe_pattern.png', image);
 
   #north {
+    background: asset-url('public/home/vertical_stripe_pattern.png', image);
     border-top: 1px solid $_07ff00;
     border-bottom: 1px solid $_07ff00;
     overflow: hidden;
 
-    & > div {
-      margin: 0 auto;
-      max-width: 1280px;
-      min-width: 860px;
-
-      & > div {
-        margin: 10px 0;
-        width: 50%;
-        text-align: center;
-
-        &:first-child {
-          font-family: 'SubwayTicker';
-          font-size: 50px;
-          letter-spacing: 10px;
-          line-height: 80px;
-          float: left;
-
-          & + div {
-            float: right;
-          }
-        }
-      }
+    div {
+      margin: 0 40px;
+      font-family: 'SubwayTicker';
+      font-size: 50px;
+      letter-spacing: 10px;
+      line-height: 80px;
+      float: left;
     }
   }
 
   #central {
     overflow: hidden;
+    border-bottom: 1px solid;
 
-    #holes {
-      min-height: 200px;
+    #site_logos {
+      background: asset-url('public/home/vertical_stripe_pattern.png', image);
+      border-right: 1px solid;
+      float: left;
+      padding: 0 40px;
 
-      & > div:first-child {
-        margin: 0 auto;
-        display: block !important;
+      $site_logos-sprite-dimensions: true;
+      @import 'public/home/site_logos/*.png';
+      @include all-site_logos-sprites;
+
+      a {
+        display: block;
+        margin: 40px auto;
       }
+    }
+
+    #stuff {
+      position: relative;
+
+      div {
+        font-family: monospace;
+        color: $_ccc;
+
+        span:first-child {
+          font-family: 'Respective', monospace;
+          font-size: 40px;
+          margin: 0 40px 0 42px;
+          color: $_ff00cf;
+        }
+      }
+    }
+  }
+
+  #south {
+    text-align: center;
+
+    .fluff {
+      height: 5px;
+      margin: 10px 0;
+
+      &.one {
+        background: asset-url('public/home/fluff/fluff1.png', image);
+      }
+
+      &.two {
+        background: asset-url('public/home/fluff/fluff2.png', image);
+      }
+
+      &.three {
+        background: asset-url('public/home/fluff/fluff3.png', image);
+      }
+
+      &.four {
+        background: asset-url('public/home/fluff/fluff4.png', image);
+      }
+
+      &.five {
+        background: asset-url('public/home/fluff/fluff5.png', image);
+      }
+    }
+
+    .trotttrotttrott {
+      padding: 10px 0;
+      border-width: 1px 0 1px 0;
+      border-style: solid;
     }
   }
 }
