@@ -70,15 +70,15 @@
       }
 
       &.three {
-        background: asset-url('public/home/fluff/fluff3.png', image);
+        background: asset-url('public/home/fluff/fluff3.png', image) center;
       }
 
       &.four {
-        background: asset-url('public/home/fluff/fluff4.png', image);
+        background: asset-url('public/home/fluff/fluff4.png', image) center;
       }
 
       &.five {
-        background: asset-url('public/home/fluff/fluff5.png', image);
+        background: asset-url('public/home/fluff/fluff5.png', image) right;
       }
     }
 

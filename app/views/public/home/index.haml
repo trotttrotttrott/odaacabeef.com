@@ -21,11 +21,9 @@
 
   %section#south
 
-    - 5.times do
+    - 7.times do |time|
+      - if time == 5
+        .trotttrotttrott= image_tag 'public/home/trotttrotttrott.png'
+        - next
       - ['one', 'two', 'three', 'four', 'five'].shuffle.each do |classname|
-        .fluff{ :class => classname }
-
-    .trotttrotttrott= image_tag 'public/home/trotttrotttrott.png'
-
-    - ['one', 'two', 'three', 'four', 'five'].shuffle.each do |classname|
-      .fluff{ :class => classname }
+        .fluff{ :class => classname, :style => "opacity: #{rand}" }
