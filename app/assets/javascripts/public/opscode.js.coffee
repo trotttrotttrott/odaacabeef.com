@@ -7,7 +7,7 @@
 #
 #= require core
 #
-#= require_tree ./public
+#= require_tree ./opscode
 
 $(document).delegate 'a[data-stop]', 'click.rails', (e)->
   $.rails.stopEverything(e)

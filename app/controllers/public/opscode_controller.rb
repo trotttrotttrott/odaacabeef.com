@@ -32,7 +32,7 @@ class Public::OpscodeController < PublicController
   private
 
   def http_auth
-    super('opscode', 'nodemonitor')
+    super(ENV['NODE_MON_USER'], ENV['NODE_MON_PASSWORD'])
   end
 
   def redirect_unless_xhr
