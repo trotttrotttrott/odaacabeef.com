@@ -20,15 +20,16 @@ gem 'foreman'
 
 gem 'puma'
 
+gem 'ember-rails'
+gem 'ember-source', '1.0.0.rc6'
+gem 'handlebars-source', '1.0.0.rc4'
+
 group :assets do
   gem 'sass-rails'
   gem 'compass-rails'
   gem 'coffee-rails'
   gem 'uglifier'
   gem 'asset_sync'
-  gem 'ember-rails'
-  gem 'ember-source', '1.0.0.rc6'
-  gem 'handlebars-source', '1.0.0.rc4'
   gem 'zurb-foundation'
 end
 
