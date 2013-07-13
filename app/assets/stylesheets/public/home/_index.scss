@@ -20,6 +20,7 @@
   #central {
     overflow: hidden;
     border-bottom: 1px solid;
+    position: relative;
 
     #site_logos {
       background: asset-url('public/home/vertical_stripe_pattern.png', image);
@@ -38,54 +39,19 @@
     }
 
     #stuff {
+      color: $_555;
+      padding: 0 5px 5px 0;
       position: relative;
+      left: 8px;
+      top: 5px;
 
-      div {
-        font-family: monospace;
-        color: $_ccc;
-
-        span:first-child {
-          font-family: 'Respective', monospace;
-          font-size: 40px;
-          margin: 0 20px 0 42px;
-          color: $_ff00cf;
-        }
+      span:first-child {
+        color: $_ff00cf;
       }
     }
   }
 
   #south {
     text-align: center;
-
-    .fluff {
-      height: 5px;
-      margin: 10px 0;
-
-      &.one {
-        background: asset-url('public/home/fluff/fluff1.png', image);
-      }
-
-      &.two {
-        background: asset-url('public/home/fluff/fluff2.png', image);
-      }
-
-      &.three {
-        background: asset-url('public/home/fluff/fluff3.png', image) center;
-      }
-
-      &.four {
-        background: asset-url('public/home/fluff/fluff4.png', image) center;
-      }
-
-      &.five {
-        background: asset-url('public/home/fluff/fluff5.png', image) right;
-      }
-    }
-
-    .trotttrotttrott {
-      padding: 10px 0;
-      border-width: 1px 0 1px 0;
-      border-style: solid;
-    }
   }
 }
