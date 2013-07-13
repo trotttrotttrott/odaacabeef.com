@@ -12,6 +12,10 @@
       font-size: 50px;
       letter-spacing: 10px;
       line-height: 80px;
+
+      @media (max-width: 600px) {
+        font-size: 13px;
+      }
     }
   }
 
@@ -36,7 +40,7 @@
   }
 
   #south {
-    padding-top: 60px;
+    height: 110px;
 
     div {
       @include text-shadow(rgba($_999, 1) 2px -1px 45px);
