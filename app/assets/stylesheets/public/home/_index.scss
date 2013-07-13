@@ -1,8 +1,7 @@
 #public_home_index {
-  background: asset-url('public/home/horizontal_stripe_pattern.png', image);
+  text-align: center;
 
   #north {
-    background: asset-url('public/home/vertical_stripe_pattern.png', image);
     border-top: 1px solid $_07ff00;
     border-bottom: 1px solid $_07ff00;
     overflow: hidden;
@@ -13,19 +12,16 @@
       font-size: 50px;
       letter-spacing: 10px;
       line-height: 80px;
-      float: left;
     }
   }
 
   #central {
+    background: asset-url('public/home/horizontal_stripe_pattern.png', image);
     overflow: hidden;
     border-bottom: 1px solid;
     position: relative;
 
     #site_logos {
-      background: asset-url('public/home/vertical_stripe_pattern.png', image);
-      border-right: 1px solid;
-      float: left;
       padding: 0 40px;
 
       $site_logos-sprite-dimensions: true;
@@ -33,25 +29,23 @@
       @include all-site_logos-sprites;
 
       a {
-        display: block;
-        margin: 40px auto;
-      }
-    }
-
-    #stuff {
-      color: $_555;
-      padding: 0 5px 5px 0;
-      position: relative;
-      left: 8px;
-      top: 5px;
-
-      span:first-child {
-        color: $_ff00cf;
+        display: inline-block;
+        margin: 40px;
       }
     }
   }
 
   #south {
-    text-align: center;
+    padding-top: 60px;
+
+    div {
+      @include text-shadow(rgba($_999, 1) 2px -1px 45px);
+      @include opacity(.9);
+      color: $_000;
+      font-size: 60px;
+      position: fixed;
+      bottom: 10px;
+      left: 25px;
+    }
   }
 }

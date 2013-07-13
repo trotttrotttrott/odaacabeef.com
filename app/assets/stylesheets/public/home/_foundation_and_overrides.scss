@@ -28,7 +28,8 @@ $em-base: 16px !default;
 
 $default-float: left;
 
-$body-bg: $_000;
+$body-bg: asset-url('public/home/vertical_stripe_pattern.png', image) $_000;
+
 $body-font-color: $_07ff00;
 $body-font-family: monospace;
 $body-font-weight: normal;

@@ -6,6 +6,7 @@ $_ffff00: #ffff00; // yellow
 
 $_fff: #fff; // white
 $_ccc: #ccc;
+$_999: #999;
 $_666: #666;
 $_555: #555;
 $_333: #333;
@@ -18,5 +19,6 @@ $_000: #000; // black
 @include font-face('AdmirationPains', font-files('/fonts/admiration_pains-webfont.ttf', '/fonts/admiration_pains-webfont.woff', '/fonts/admiration_pains-webfont.svg'), '/fonts/admiration_pains-webfont.eot');
 
 @import
+  'foundicons',
   'public/home/foundation_and_overrides',
   'public/home/index';
