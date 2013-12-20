@@ -1,0 +1,34 @@
+@import 'compass';
+@import 'compass/reset';
+
+$_07ff00: #07ff00; // green
+$_ff00cf: #ff00cf; // pink
+$_ffff00: #ffff00; // yellow
+
+$_fff: #fff; // white
+$_ccc: #ccc;
+$_666: #666;
+$_333: #333;
+$_111: #111;
+$_000: #000; // black
+
+@include font-face('SubwayTicker', font-files('/fonts/subway_ticker-webfont.ttf', '/fonts/subway_ticker-webfont.woff', '/fonts/subway_ticker-webfont.svg'), '/fonts/subway_ticker-webfont.eot');
+@include font-face('Vera', font-files('/fonts/vera-webfont.ttf', '/fonts/vera-webfont.woff', '/fonts/vera-webfont.svg'), '/fonts/vera-webfont.eot');
+@include font-face('Respective', font-files('/fonts/respective-webfont.ttf', '/fonts/respective-webfont.woff', '/fonts/respective-webfont.svg'), '/fonts/respective-webfont.eot');
+@include font-face('AdmirationPains', font-files('/fonts/admiration_pains-webfont.ttf', '/fonts/admiration_pains-webfont.woff', '/fonts/admiration_pains-webfont.svg'), '/fonts/admiration_pains-webfont.eot');
+
+html {
+  background: $_000;
+  font-family: 'AdmirationPains', monospace;
+  color: $_07ff00;
+  text-align: center;
+}
+
+h1 {
+  font-size: 100px;
+  padding: 100px 0;
+}
+
+object {
+  margin: 0 auto;
+}
