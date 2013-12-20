@@ -22,6 +22,10 @@ html {
   font-family: 'AdmirationPains', monospace;
   color: $_07ff00;
   text-align: center;
+  cursor: url(asset-path("public/chrimbus/ellie.png", image)), auto;
+}
+
+body {
 }
 
 h1 {
