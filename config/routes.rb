@@ -15,5 +15,9 @@ Odaacabeef::Application.routes.draw do
     namespace :trotttrotttrott do
       get 'public-key', :action => 'public_key'
     end
+
+    namespace :chrimbus do
+      get :trotts
+    end
   end
 end
